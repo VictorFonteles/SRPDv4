@@ -1,0 +1,46 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 class="card-title">Assinantes</h2>
+        <div class="card">
+            <div class="card-body">
+        
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th width="60%">Nome</th>
+                                <th width="20%">Matrícula</th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if assinantes %}
+                            {% for p in assinantes %}
+                            <tr>
+                                <td> {{ p.nome }}</a> </td>
+                                <td> {{ p.matricula }}</a> </td>
+                            </tr>
+                            {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td>Não há assinantes</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+{% static 'images/avatar/2.jpg

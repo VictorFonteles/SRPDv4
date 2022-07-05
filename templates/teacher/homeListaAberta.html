@@ -1,0 +1,28 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% if lista %}
+
+<h1>Lista aberta</h1>
+<div class="card">
+
+        <div class="lista-aberta">
+            <a href="/teacher/opcoes_lista/{{ lista.id }}">              
+                    <div class="img-lista"><img src="{% static 'images/listaAberta.png' %}"></div>
+                    <br>
+                    <p>{{ lista.materia }} - {{ lista.turma }} </p>           
+            </a>
+        </div>
+ 
+      
+    </div>
+
+{% endif %}
+
+{% endblock %}
+
+

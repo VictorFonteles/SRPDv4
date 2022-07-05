@@ -1,0 +1,53 @@
+{% extends '_base.html' %}
+ {% load static %}
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <h2 >Histórico de listas</h2>
+        <div class="card">
+            <div class="card-body">
+        
+                <div class="table-responsive">
+                    <table class="table header-border">
+                        <thead>
+                            <tr>
+                                <th width="60%">Lista</th>
+                                <th width="20%">Data</th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% if listas %}
+                            {% for p in listas %}
+                            <tr>
+                                
+                                    <td> <a href="/teacher/alunos_presentes/{{ p.id }}/">{{ p.materia }} - {{ p.turma }}</a> </td>
+                                    <td> <a href="/teacher/alunos_presentes/{{ p.id }}/">{{ p.data_criacao }}</a> </td>
+                                    <td>
+                                        <a href=""><img src="{% static 'images/baixarLista.png' %}"></a>
+                                    </td>
+                                    <td> 
+                                        <a href="/teacher/excluir/{{ p.id }}"><img src="{% static 'images/excluirLista.png' %}"></a>
+                                    </td>
+                                
+                            </tr>
+                            
+                            {% endfor %}
+                            {% else %}
+                            <tr>
+                                <td>Não há listas criadas.</td>
+                            </tr>
+                            {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+

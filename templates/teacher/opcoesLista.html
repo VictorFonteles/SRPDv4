@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+{% if lista %}
+<div class="card">
+<div class="options-list">
+    <h4>{{ lista.turma }} - {{ lista.data_criacao }}</h4>
+    <div class="border_bottom"></div>
+    <a href="/teacher/adicionar_estudante/{{ lista.id }}"><button class="btn btn-success">Adicionar estudante</button></a>
+    <a href="/teacher/salvar_lista/{{ lista.id }}"><button class="btn btn-success">Salvar lista</button></a>
+</div>
+</div>
+
+{% endif %}
+
+{% endblock %}
